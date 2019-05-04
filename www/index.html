@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>Toko A'Mbul</title>
+
+	<meta name="description" content="Static &amp; Dynamic Tables" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+	<!-- page specific plugin styles -->
+
+	<!-- text fonts -->
+	<link rel="stylesheet" href="assets/css/fonts.googleapis.com.css" />
+
+	<!-- ace styles -->
+	<link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+	<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+		<![endif]-->
+	<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+
+	<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+	<!-- inline styles related to this page -->
+
+	<!-- ace settings handler -->
+	<script src="assets/js/ace-extra.min.js"></script>
+
+	<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+	<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body class="no-skin">
+	<div id="navbar" class="navbar navbar-default          ace-save-state">
+		<div class="navbar-container ace-save-state" id="navbar-container">
+			<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+				<span class="sr-only">Toggle sidebar</span>
+
+				<span class="icon-bar"></span>
+
+				<span class="icon-bar"></span>
+
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="navbar-header pull-left">
+				<a href="index.html" class="navbar-brand">
+					<small>
+						<i class="fa fa-leaf"></i>
+						A'Mbul Jaya
+					</small>
+				</a>
+			</div>
+
+			<div class="navbar-buttons navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+
+				</ul>
+			</div>
+		</div><!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container ace-save-state" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.loadState('main-container')
+			} catch (e) {}
+		</script>
+
+		<div id="sidebar" class="sidebar                  responsive                    ace-save-state">
+			<script type="text/javascript">
+				try {
+					ace.settings.loadState('sidebar')
+				} catch (e) {}
+			</script>
+
+			<ul class="nav nav-list">
+
+				<li class="active open">
+					<a href="#" class="dropdown-toggle">
+						<i class="menu-icon fa fa-list"></i>
+						<span class="menu-text"> Table </span>
+					</a>
+				</li>
+			</ul><!-- /.nav-list -->
+		</div>
+
+		<div class="main-content">
+			<div class="main-content-inner">
+				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+
+					<div class="nav-search" id="nav-search">
+						<form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="Search ..." class="nav-search-input"
+									id="nav-search-input" autocomplete="off" />
+								<i class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+						</form>
+					</div><!-- /.nav-search -->
+				</div>
+
+				<div class="page-content">
+
+
+					<div class="page-header">
+						<h1>
+							Table Toko A'MBUL
+						</h1>
+					</div><!-- /.page-header -->
+					<div class="row">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-alt btn-sm btn-info" data-toggle="modal"
+								data-target="#tambahmodal">
+								<i class="fa fa-plus"></i> Tambah Data
+							</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<div class="row">
+								<div class="col-xs-12">
+									<table id="simple-table" class="table  table-bordered table-hover">
+										<thead>
+											<tr>
+												<th scope="col" class="text-center">No</th>
+												<th scope="col" class="text-center">Id Barang</th>
+												<th scope="col" class="text-center">Jenis</th>
+												<th scope="col" class="text-center">Nama Barang</th>
+
+												<th scope="col" class="text-center">
+													Harga
+												</th>
+
+												<th scope="col" class="text-center">Action</th>
+											</tr>
+										</thead>
+
+										<tbody id="showdata">
+
+										</tbody>
+									</table>
+								</div><!-- /.span -->
+							</div><!-- /.row -->
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.page-content -->
+			</div>
+		</div><!-- /.main-content -->
+
+		<div class="footer">
+			<div class="footer-inner">
+				<div class="footer-content">
+					<span class="bigger-120">
+						<span class="blue bolder">A'MBUL</span>
+						Nu Bageur tea--2019
+					</span>
+
+					&nbsp; &nbsp;
+					<span class="action-buttons">
+						<a href="#">
+							<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+						</a>
+
+						<a href="#">
+							<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+						</a>
+
+						<a href="#">
+							<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+						</a>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+			<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		</a>
+	</div><!-- /.main-container -->
+	<div id="tambahmodal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h2 class="modal-title"><i class="fa fa-pencil"></i> Tambah Data</h2>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" id="form-tambah" enctype="multipart/form-data"
+						class="form-horizontal form-bordered" onsubmit="return false;">
+						<fieldset>
+							<legend> Masukan Data </legend>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">ID Barang
+									:</label>
+								<div class="col-md-9">
+									<input type="text" id="id" name="id" class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">Jenis
+									:</label>
+								<div class="col-md-9">
+									<input type="text" id="jn" name="jn" class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">Nama Barang
+									:</label>
+								<div class="col-md-9">
+									<input type="text" id="nb" name="nb" class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">Harga</label>
+								<div class="col-md-9">
+									<input type="text" id="hg" name="hg" class="form-control" placeholder="">
+								</div>
+							</div>
+							<legend><small class="text-danger">Pastikan Data yang di tambahkan
+									Benar</small>
+							</legend>
+						</fieldset>
+						<div class="form-group form-actions">
+							<div class="col-xs-12 text-right">
+								<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-sm btn-primary" id="btn-tambah">Simpan</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="editmodal" class="modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h2 class="modal-title"><i class="fa fa-pencil"></i> Edit Data</h2>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post" id="form-edit" enctype="multipart/form-data"
+						class="form-horizontal form-bordered" onsubmit="return false;">
+						<fieldset>
+							<legend> Masukan Data </legend>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">ID Barang</label>
+								<div class="col-md-9">
+									<input type="text" id="ide" name="id" readonly class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">Jenis</label>
+								<div class="col-md-9">
+									<input type="text" id="jne" name="jn" class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">Nama Barang</label>
+								<div class="col-md-9">
+									<input type="text" id="nbe" name="nb" class="form-control" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="id_produk">Harga</label>
+								<div class="col-md-9">
+									<input type="text" id="hge" name="hg" class="form-control" placeholder="">
+								</div>
+							</div>
+							<legend><small class="text-danger">Pastikan Data Sudah
+									Benar</small>
+							</legend>
+						</fieldset>
+						<div class="form-group form-actions">
+							<div class="col-xs-12 text-right">
+								<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-sm btn-primary" id="btn-edit">Simpan</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- basic scripts -->
+
+	<!--[if !IE]> -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<![endif]-->
+	<script type="text/javascript">
+		if ('ontouchstart' in document.documentElement) document.write(
+			"<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+	<script src="assets/js/jquery.dataTables.min.js"></script>
+	<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
+	<script src="assets/js/dataTables.buttons.min.js"></script>
+	<script src="assets/js/buttons.flash.min.js"></script>
+	<script src="assets/js/buttons.html5.min.js"></script>
+	<script src="assets/js/buttons.print.min.js"></script>
+	<script src="assets/js/buttons.colVis.min.js"></script>
+	<script src="assets/js/dataTables.select.min.js"></script>
+
+	<!-- ace scripts -->
+	<script src="assets/js/ace-elements.min.js"></script>
+	<script src="assets/js/ace.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+	<script type="text/javascript"></script>
+	<script>
+		$(document).ready(function () {
+			tampiltabeldata();
+
+			function tampiltabeldata() {
+				$.ajax({
+					url: "http://pkl.notaxcloth.com/server-fw/barang",
+					type: "GET",
+					dataType: "json",
+					success: function (data) {
+						console.log(data['data']);
+						var no = 1;
+						$.each(data['data'], function (i, field) {
+							var id = field.id;
+							var jenis = field.jenis;
+							var nama = field.nama_barang;
+							var harga = field.harga;
+							$("#showdata").append(`
+                            <tr>
+                                <td class="text-center">` + no++ + `</td>
+                                <td class="text-center">` + id + `</td>
+                                <td class="text-center">` + jenis + `</td>
+                                <td class="text-center">` + nama + `</td>
+                                <td class="text-center">` + harga +
+								`</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-warning item_edit" name="item_edit" title="Edit" data-toggle="modal" id="` +
+								id +
+								`" onclick=""><i class="fa fa-edit"></i></button>
+
+                                    <button type="button" class="btn btn-danger data_hapus"  title="Hapus" data-toggle="modal" id="` +
+								id + `"><i class="fa fa-times"></i></button>
+                                </td>
+                            </tr> 
+                        `);
+						});
+						$('#tabelku').DataTable();
+					}
+				});
+
+			}
+			$("#btn-tambah").click(function () {
+				var data = $("#form-tambah").serialize();
+				console.log(data);
+				$.ajax({
+					url: "http://pkl.notaxcloth.com/server-fw/barang",
+					type: "POST",
+					data: $("#form-tambah").serialize(),
+					dataType: "json",
+					success: function (result) {
+						if (result.status) {
+							alert(
+								"Sukses, Data berhasil ditambahkan"
+							);
+							$('#tambahmodal').modal('hide');
+							window.location.href =
+								"index.html";
+						} else {
+							alert("Error, Data Gagal ditambahkan");
+						}
+					},
+					error: function (xhr, Status, err) {
+						$("Data Kurang Lengkap : " + Status);
+					}
+				});
+				return false;
+			});
+			$(document).on('click', '.item_edit', function () {
+				var id = $(this).attr('id');
+				console.log(id);
+				$('#editmodal').modal('show');
+				$.ajax({
+					type: "GET",
+					url: "http://pkl.notaxcloth.com/server-fw/barang",
+					dataType: 'json',
+					data: {
+						id: id
+					},
+					success: function (data) {
+						console.log(data['data']);
+						$.each(data['data'], function (i, field) {
+							var id = field.id;
+							var jn = field.jenis;
+							var nb = field.nama_barang;
+							var hg = field.harga;
+							$('[id="ide"]').val(id);
+							$('[id="jne"]').val(jn);
+							$('[id="nbe"]').val(nb);
+							$('[id="hge"]').val(hg);
+
+						});
+
+					}
+				});
+			});
+			$(document).on('click', '#btn-edit', function () {
+				var data = $("#form-edit").serialize();
+				console.log(data);
+				$.ajax({
+					url: "http://pkl.notaxcloth.com/server-fw/barang",
+					type: 'PUT',
+					data: $("#form-edit").serialize(),
+					dataType: 'json',
+					success: function (result) {
+						if (result.status) {
+							alert("Sukses, Data berhasil dirubah");
+							$('#editmodal').modal('hide');
+							window.location.href =
+								"index.html";
+						} else {
+							alert("Error, Data Gagal dirubah");
+						}
+					},
+					error: function (xhr, Status, err) {
+						alert("Sukses, Data berhasil dirubah");
+						$('#editmodal').modal('hide');
+						window.location.href =
+							"index.html";
+					}
+				});
+				return false;
+			});
+			$(document).on('click', '.data_hapus', function () {
+				var id = $(this).attr('id');
+				console.log(id);
+				$.ajax({
+					url: "http://pkl.notaxcloth.com/server-fw/barang",
+					type: "DELETE",
+					data: {id:id},
+					dataType: "json",
+					success: function (result) {
+						if (result.status) {
+							alert("Sukses, Data berhasil dihapus");
+							window.location.href =
+								"index.html";
+						} else {
+							alert("Error, Data Gagal dihapus");
+						}
+					},
+					error: function (xhr, Status, err) {
+						alert("Sukses, Data berhasil dihapus");
+						window.location.href =
+							"index.html";
+					}
+				});
+				return false;
+			});
+		});
+	</script>
+</body>
+
+</html>
